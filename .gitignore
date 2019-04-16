@@ -78,6 +78,8 @@ target/
 
 # pyenv
 .python-version
+node_modules/
+flask_session/
 
 # celery beat schedule file
 celerybeat-schedule

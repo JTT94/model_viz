@@ -19,3 +19,6 @@ yarn add -D style-loader css-loader
 
 <change webpack config js again>
 yarn add -D babel-loader@^7
+
+yarn run watch
+python run.py

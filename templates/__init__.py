@@ -1,5 +1,5 @@
 from flask import Flask
-from templates.python.views import home_blueprint
+from templates.python.views import home_blueprint, map_blueprint
 
 app = Flask(__name__,
 			static_folder = './public',
@@ -7,3 +7,4 @@ app = Flask(__name__,
 
 # register the blueprints
 app.register_blueprint(home_blueprint)
+app.register_blueprint(map_blueprint)
