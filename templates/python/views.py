@@ -19,7 +19,7 @@ def map():
 
 @home_blueprint.route('/data')
 def barchart():
-	data = dict(data= [12, 5, 6, 6, 9, 10])
+	data = [12, 5, 6, 6, 9, 10]
 	return jsonify(data)
 
 @home_blueprint.route('/plotlybar')

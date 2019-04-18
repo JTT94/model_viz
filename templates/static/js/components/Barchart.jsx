@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-
+import * as d3 from "d3";
 class BarChart extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   componentDidMount() {
     this.drawChart();
   }
+
+  componentDidUpdate() {
+      this.drawChart()
+   }
 
   drawChart() {
     const data = this.props.data;
@@ -18,6 +22,7 @@ class BarChart extends Component {
     .attr("height", h)
     .style("margin-left", 100);
 
+    console.log(data)
     svg.selectAll("rect")
       .data(data)
       .enter()
