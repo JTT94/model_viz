@@ -14,15 +14,19 @@ class BarChart extends Component {
 
   drawChart() {
     const data = this.props.data;
-    const w = 700
-    const h = 300
-    const svg = d3.select("body")
+    const w = 700;
+    const h = 300;
+    const id = "#" + this.props.id;
+
+    d3.selectAll(id).select('svg')
+      .remove();
+
+    const svg = d3.select(id)
     .append("svg")
     .attr("width", w)
     .attr("height", h)
     .style("margin-left", 100);
 
-    console.log(data)
     svg.selectAll("rect")
       .data(data)
       .enter()
@@ -32,10 +36,10 @@ class BarChart extends Component {
       .attr("width", 65)
       .attr("height", (d, i) => d * 10)
       .attr("fill", "green")
-  }
+  };
 
   render(){
-    return <div id={"#" + this.props.id}></div>
+    return <div id={this.props.id}></div>
   }
 }
 

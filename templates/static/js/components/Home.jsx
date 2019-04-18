@@ -7,7 +7,8 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
-            data: []
+            data: [],
+            plotlydata : []
         }
     }
 
@@ -19,6 +20,14 @@ export default class Home extends Component {
                   })
                 .catch((error) => {
                     console.error(error);
+                }),
+        fetch('/plotlybar')
+                  .then((response) => response.json())
+                  .then((responseJson) => {
+                      this.setState({ plotlydata: responseJson }) ;
+                  })
+                .catch((error) => {
+                    console.error(error);
                 })
     }
 
@@ -26,7 +35,8 @@ export default class Home extends Component {
        return (
            <div>
             <h1>Hello React!</h1>
-            <BarChart  data={this.state.data} />
+            <BarChart  data={this.state.data} id = 'bar'/>
+            <PlotlyBarChart  data={this.state.plotlydata} />
             </div>
        )
     };
