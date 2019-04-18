@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const config = {
-        devtool: 'eval-source-map',
+ devtool: 'eval-source-map',
  entry: __dirname + '/js/index.jsx',
  output:{
-  path: __dirname + '/dist',
+  path: __dirname + '/../public',
   filename: 'bundle.js',
 },
  resolve: {
