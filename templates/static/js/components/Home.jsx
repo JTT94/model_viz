@@ -5,7 +5,8 @@ export default class Home extends Component {
     super(props)
 
     this.state = {
-      data:  [12, 5, 6, 6, 9, 10]
+      data:  fetch('/data')
+      .then(response => response.json())
     }
   }
 
