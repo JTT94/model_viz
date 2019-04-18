@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import BarChart from './Barchart';
+import BarChart from './BarChart';
 import PlotlyBarChart from './PlotlyBarchart';
+import Draggable from 'react-draggable';
 
 export default class Home extends Component {
     constructor(props) {
@@ -34,9 +35,56 @@ export default class Home extends Component {
     render() {
        return (
            <div>
-            <h1>Hello React!</h1>
-            <BarChart  data={this.state.data} id = 'bar'/>
-            <PlotlyBarChart  data={this.state.plotlydata} />
+            <Draggable
+                axis="both"
+                handle=".handle"
+                defaultPosition={{x: 0, y: 0}}
+                position={null}
+                grid={[25, 25]}
+                scale={1}
+                onStart={this.handleStart}
+                onDrag={this.handleDrag}
+                onStop={this.handleStop}>
+                <div>
+                  <div className="handle">
+                  <h1>Hello React!</h1>
+                  </div>
+                </div>
+            </Draggable>
+
+            <Draggable
+                axis="both"
+                handle=".handle"
+                defaultPosition={{x: 0, y: 0}}
+                position={null}
+                grid={[25, 25]}
+                scale={1}
+                onStart={this.handleStart}
+                onDrag={this.handleDrag}
+                onStop={this.handleStop}>
+                <div>
+                  <div className="handle">
+                  <BarChart  data={this.state.data} id = 'bar'/>
+                  </div>
+                </div>
+              </Draggable>
+              <Draggable
+                axis="both"
+                handle=".handle"
+                defaultPosition={{x: 0, y: 0}}
+                position={null}
+                grid={[25, 25]}
+                scale={1}
+                onStart={this.handleStart}
+                onDrag={this.handleDrag}
+                onStop={this.handleStop}>
+                <div>
+                  <div className="handle">
+                  <PlotlyBarChart  data={this.state.plotlydata} />
+                  </div>
+                </div>
+              </Draggable>
+
             </div>
        )
     };

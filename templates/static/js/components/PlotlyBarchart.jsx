@@ -11,7 +11,7 @@ class PlotlyBarChart extends React.Component {
     return (
       <Plot
         data={this.props.data}
-        layout={ {width: 320, height: 240, title: 'A Fancy Plot'} }
+        layout={ {width: 500, height: 800, title: 'A Fancy Plot'} }
       />
     );
   }

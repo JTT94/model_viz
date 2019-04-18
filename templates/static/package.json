@@ -27,6 +27,8 @@
   "dependencies": {
     "d3": "^5.9.2",
     "plotly.js": "^1.47.2",
+    "react-draggable": "^3.2.1",
+    "react-grid-layout": "^0.16.6",
     "react-plotly.js": "^2.3.0"
   }
 }
