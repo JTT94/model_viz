@@ -3,9 +3,10 @@ import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import BarChart from "./Barchart";
 const ReactGridLayout = WidthProvider(RGL);
-class BasicLayout extends React.PureComponent {
 
+class BasicLayout extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -16,12 +17,26 @@ class BasicLayout extends React.PureComponent {
 
   generateDOM() {
     return _.map(_.range(this.props.items), function(i) {
-      return (
+      switch(i) {
+          case 0:
+            // code block
+              return(
+                  <div key={i}>
+                     <span>
+                    <BarChart  data={[1,2,3,4]} id = 'barplot'/>
+                    </span>
+                  </div>
+              )
+            break;
 
-        <div key={i}>
-          <span className="text">{i}</span>
-        </div>
-      );
+          default:
+            // code block
+              return (
+              <div key={i}>
+                  <span className="text">{i}</span>
+              </div>
+              )
+        }
     });
   }
 
