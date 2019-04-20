@@ -1,10 +1,9 @@
 import React from "react";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 const ReactGridLayout = WidthProvider(RGL);
-require("react-grid-layout/css/styles.css")
-require("react-resizable/css/styles.css")
-
 class BasicLayout extends React.PureComponent {
 
 
@@ -18,6 +17,7 @@ class BasicLayout extends React.PureComponent {
   generateDOM() {
     return _.map(_.range(this.props.items), function(i) {
       return (
+
         <div key={i}>
           <span className="text">{i}</span>
         </div>

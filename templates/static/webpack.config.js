@@ -18,7 +18,7 @@ const config = {
   },
   {
          test: /\.css$/,
-         loader: 'style-loader!css-loader?modules'
+         use: [ 'style-loader', 'css-loader' ]
   }]
  }
 };

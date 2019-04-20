@@ -87,7 +87,7 @@ export default class Home extends Component {
                 </div>
              </Draggable>
             <div>
-            <BasicLayout className= "layout" items= {20} rowHeight= {30} onLayoutChange= {function() {}} cols={12} />
+            <BasicLayout className= "layout" items= {5} rowHeight= {30} onLayoutChange= {function() {}} cols={10} />
             </div>
             </div>
        )
