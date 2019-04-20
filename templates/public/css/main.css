@@ -1,3 +1,4 @@
+
 html {
 	box-sizing: border-box;
 	-ms-text-size-adjust: 100%;
@@ -13,4 +14,9 @@ body {
 h1, h2, h3, h4, h5, h6, p, ul {
 	margin: 0;
 	padding: 0;
+}
+
+.react-grid-item {
+	background: #ccc;
+    border: 1px solid black;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BarChart from './BarChart';
 import PlotlyBarChart from './PlotlyBarchart';
 import Draggable from 'react-draggable';
+import BasicLayout from './GridLayout';
 
 export default class Home extends Component {
     constructor(props) {
@@ -68,7 +69,8 @@ export default class Home extends Component {
                   </div>
                 </div>
               </Draggable>
-              <Draggable
+
+            <Draggable
                 axis="both"
                 handle=".handle"
                 defaultPosition={{x: 0, y: 0}}
@@ -83,8 +85,10 @@ export default class Home extends Component {
                   <PlotlyBarChart  data={this.state.plotlydata} />
                   </div>
                 </div>
-              </Draggable>
-
+             </Draggable>
+            <div>
+            <BasicLayout className= "layout" items= {20} rowHeight= {30} onLayoutChange= {function() {}} cols={12} />
+            </div>
             </div>
        )
     };
