@@ -22,7 +22,7 @@ Full-stack model vizualisation web-app
 ## Run
 - Open 2 terminals
   - Terminal 1: 
-   - `cd ./templates/static`
-   - `yarn run watch`
+    - `cd ./templates/static`
+    - `yarn run watch`
   - Terminal 2: 
-   - `python run.py`
+    - `python run.py`
