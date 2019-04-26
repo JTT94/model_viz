@@ -1,4 +1,4 @@
-# model_viz
+# model_viz: IN DEVELOPMENT
 
 Full-stack model vizualisation web-app
 
