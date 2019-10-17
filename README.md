@@ -14,8 +14,8 @@ Full-stack model vizualisation web-app
 - `git clone https://github.com/JTT94/model_viz.git`
 - `python -m venv venv`
 - `venv\Scripts\activate`
-- `python -m pip install --upgrade pip`
-- `pip install -r requirements.txt`
+- `python -m pip install --upgrade pip` 
+- `pip install -r requirements.txt` or `python -m pip install -r requirements.txt`
 - `cd ./templates/static`
 - `yarn install`
 
