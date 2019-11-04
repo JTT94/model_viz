@@ -65,7 +65,7 @@ export default class Home extends Component {
                 onStop={this.handleStop}>
                 <div>
                   <div className="handle">
-                  <BarChart  data={this.state.data} id = 'bar'/>
+                  <BarChart  data={this.state.data} id = {'bar'}/>
                   </div>
                 </div>
               </Draggable>

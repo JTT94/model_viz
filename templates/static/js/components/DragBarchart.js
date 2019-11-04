@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Draggable from 'react-draggable';
-import BarChart from "./Barchart";
+import BarChart from "./BarChart";
 
 class DragBarchart extends React.Component {
   constructor(props) {

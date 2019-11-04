@@ -3,7 +3,7 @@ import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import BarChart from "./Barchart";
+import BarChart from "./BarChart";
 const ReactGridLayout = WidthProvider(RGL);
 
 class BasicLayout extends React.PureComponent {
@@ -11,8 +11,30 @@ class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const layout = this.generateLayout();
-    this.state = { layout };
+    this.state = {
+	    layout: this.generateLayout(),
+            data: [],
+            plotlydata : []
+        }
+  }
+
+  componentDidMount() {
+        fetch('/data')
+                  .then((response) => response.json())
+                  .then((responseJson) => {
+                      this.setState({ data: responseJson }) ;
+                  })
+                .catch((error) => {
+                    console.error(error);
+                }),
+        fetch('/plotlybar')
+                  .then((response) => response.json())
+                  .then((responseJson) => {
+                      this.setState({ plotlydata: responseJson }) ;
+                  })
+                .catch((error) => {
+                    console.error(error);
+                })
   }
 
   generateDOM() {
@@ -22,9 +44,7 @@ class BasicLayout extends React.PureComponent {
             // code block
               return(
                   <div key={i}>
-                     <span>
-                    <BarChart  data={[1,2,3,4]} id = 'barplot'/>
-                    </span>
+                      <BarChart  data={[1,2,3]} id = {'bar'}/>
                   </div>
               )
             break;
